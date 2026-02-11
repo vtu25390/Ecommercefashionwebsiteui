@@ -2,6 +2,13 @@ import { ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Hero() {
+  const scrollToCollections = () => {
+    document.getElementById('collections')?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <section className="bg-gradient-to-r from-purple-50 to-pink-50 py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -25,7 +32,10 @@ export function Hero() {
                 Shop Now
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="px-8 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-medium hover:bg-purple-50 transition-colors">
+              <button 
+                onClick={scrollToCollections}
+                className="px-8 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-medium hover:bg-purple-50 transition-colors"
+              >
                 View Collections
               </button>
             </div>

@@ -53,25 +53,27 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           </div>
         )}
         
-        {/* Special Badge */}
-        {product.badge && (
-          <div className="absolute top-3 right-3 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-            {product.badge}
-          </div>
-        )}
-        
         {/* Wishlist Button */}
         <button 
           onClick={(e) => {
             e.stopPropagation();
             toggleWishlist();
           }}
-          className="absolute top-3 right-3 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+          className={`absolute top-3 right-3 w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-all ${
+            isWishlisted ? 'bg-pink-600' : 'bg-white'
+          }`}
         >
           <Heart 
-            className={`w-5 h-5 ${isWishlisted ? 'fill-pink-600 text-pink-600' : 'text-gray-600'}`}
+            className={`w-5 h-5 ${isWishlisted ? 'fill-white text-white' : 'text-gray-600'}`}
           />
         </button>
+        
+        {/* Special Badge */}
+        {product.badge && (
+          <div className="absolute top-16 right-3 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+            {product.badge}
+          </div>
+        )}
         
         {/* Quick Actions */}
         <div 

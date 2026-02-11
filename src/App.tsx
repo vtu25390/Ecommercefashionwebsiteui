@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { Collections } from './components/Collections';
 import { CategoryBar } from './components/CategoryBar';
 import { ProductGrid } from './components/ProductGrid';
 import { Footer } from './components/Footer';
@@ -17,6 +18,7 @@ export default function App() {
     <div className="min-h-screen bg-gray-50">
       <Header cartCount={cartCount} />
       <Hero />
+      <Collections />
       <CategoryBar 
         selectedCategory={selectedCategory} 
         onSelectCategory={setSelectedCategory} 
